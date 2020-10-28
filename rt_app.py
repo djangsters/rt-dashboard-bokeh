@@ -11,7 +11,7 @@ from redis_tasks.utils import utcnow
 
 from history import get_tasks
 
-time_window = datetime.timedelta(hours=24)
+time_window = datetime.timedelta(hours=48)
 until_ts = utcnow() - time_window
 worker_streams, short_tasks_stream = get_tasks(until_ts)
 sources = {wnr: ColumnDataSource(gdf) for wnr, gdf in worker_streams.items()}

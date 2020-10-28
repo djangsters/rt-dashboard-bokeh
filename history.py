@@ -15,7 +15,7 @@ if not settings._initialized:
                              })
 
 def get_tasks(until_ts=None):
-    max_finished_tasks = 1000
+    max_finished_tasks = 5000
     max_failed_tasks = 1000
     finished_tasks = finished_task_registry.get_tasks(-max_finished_tasks, -1)
     failed_tasks = failed_task_registry.get_tasks(-max_failed_tasks, -1)
